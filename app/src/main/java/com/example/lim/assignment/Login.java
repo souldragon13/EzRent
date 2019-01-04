@@ -40,13 +40,19 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    public void goToHomepage() {
+        Intent intent = new Intent(this, homepage.class);
+        startActivity(intent);
+    }
+
     public void login() {
-        Log.d(TAG, "Login");
+        Log.d(TAG, "Login Success");
         if (!validate()) {
             onLoginFailed();
             return;
+        }else {
+            goToHomepage();
         }
-
         Loginbutton.setEnabled(false);
 
     }
@@ -85,4 +91,6 @@ public class Login extends AppCompatActivity {
 
         return valid;
     }
+
+
 }
