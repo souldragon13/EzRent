@@ -11,17 +11,25 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SignUp extends AppCompatActivity {
     private static final String TAG = "SignupActivity";
     private TextView loginLink;
     private Button Signupbutton;
     EditText usernameEditText,emailEditText,passwordEditText;
 
+    DatabaseReference databaseuser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        databaseuser = FirebaseDatabase.getInstance().getReference("user");
+        usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        emailEditText = (EditText) findViewById(R.id.emailEditText);
+        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
         loginLink = (TextView)findViewById(R.id.link_login);
         Signupbutton =(Button) findViewById(R.id.btn_signup);
@@ -30,7 +38,27 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                signup();
+                //signup();
+                String username = usernameEditText.getText().toString();
+                String email = emailEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
+                if(username.equals("")||email.equals("")||password.equals("")){
+                    Toast.makeText(getApplicationContext(),"Fields are empty",Toast.LENGTH_SHORT).show();
+                }else{
+                    adduser();
+                    Login();
+//                    Boolean chkregister = db.chkregister(username);
+//                    if(chkregister==true){
+//                    Boolean insert = db.insert(username,email,password);
+//                        if(insert==true){
+//                        Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_SHORT).show();
+//                            Login();
+//                        }
+//                }
+//                else{
+//                        Toast.makeText(getApplicationContext(),"username Already exists",Toast.LENGTH_SHORT).show();
+//                    }
+                }
             }
         });
 
@@ -43,6 +71,10 @@ public class SignUp extends AppCompatActivity {
 
             }
         });
+    }
+    public void Login(){
+        Intent intent = new Intent(this,Login.class);
+        startActivity(intent);
     }
     public void signup() {
         Log.d(TAG, "Signup");
@@ -61,11 +93,11 @@ public class SignUp extends AppCompatActivity {
     }
     public boolean validate() {
 
-         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-         emailEditText = (EditText) findViewById(R.id.emailEditText);
-         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+        usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        emailEditText = (EditText) findViewById(R.id.emailEditText);
+        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
-       boolean valid = true;
+        boolean valid = true;
 
         String username = usernameEditText.getText().toString();
         String email = emailEditText.getText().toString();
@@ -75,7 +107,7 @@ public class SignUp extends AppCompatActivity {
 
 
         if (username.isEmpty() || username.length() > 8 ) {
-            usernameEditText.setError("Enter a valid username");
+            usernameEditText.setError("enter a valid username");
             valid = false;
         } else {
             usernameEditText.setError(null);
@@ -84,7 +116,7 @@ public class SignUp extends AppCompatActivity {
 
 
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Enter a valid email address");
+            emailEditText.setError("enter a valid email address");
             valid = false;
         } else {
             emailEditText.setError(null);
@@ -93,12 +125,24 @@ public class SignUp extends AppCompatActivity {
 
 
         if (password.isEmpty() || password.length() > 8) {
-            passwordEditText.setError("Enter a valid password");
+            passwordEditText.setError("enter a valid password");
             valid = false;
         } else {
             passwordEditText.setError(null);
         }
 
         return valid;
+    }
+    private void adduser(){
+        String name = usernameEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        String id = databaseuser.push().getKey();
+        User user = new User(name,email,password);
+
+        databaseuser.child(name).setValue(user);
+
+        Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_SHORT).show();
     }
 }

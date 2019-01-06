@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".homepage">
+    tools:context=".Homepage">
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,7 +29,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:onClick="goToFind"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bt_post"
         app:layout_constraintStart_toStartOf="parent"

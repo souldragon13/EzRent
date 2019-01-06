@@ -17,18 +17,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Hostel"
-            android:exported="true" />
-        <activity
             android:name=".Post"
             android:exported="true" />
         <activity
             android:name=".Login"
             android:exported="true" />
         <activity
-            android:name=".homepage"
+            android:name=".Homepage"
             android:exported="true" />
-        <activity android:name=".SignUp" android:exported="true" ></activity>
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity android:name=".Find" />
+        <activity android:name=".Notification" />
+        <activity android:name=".Profile" />
+        <activity android:name=".like" />
+        <activity android:name=".Help"></activity>
     </application>
 
 </manifest>
