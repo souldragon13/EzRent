@@ -37,7 +37,7 @@ public class SignUp extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                //signup();
+               //signup();
                 String username = usernameEditText.getText().toString();
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
@@ -83,11 +83,11 @@ public class SignUp extends AppCompatActivity {
     }
     public boolean validate() {
 
-        usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-        emailEditText = (EditText) findViewById(R.id.emailEditText);
-        passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+         emailEditText = (EditText) findViewById(R.id.emailEditText);
+         passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
-        boolean valid = true;
+       boolean valid = true;
 
         String username = usernameEditText.getText().toString();
         String email = emailEditText.getText().toString();

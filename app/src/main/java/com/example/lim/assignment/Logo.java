@@ -15,7 +15,7 @@ public class Logo extends AppCompatActivity {
             public void run(){
                 try{
                     sleep(1000);
-                    Intent intent = new Intent(getApplicationContext(),Login.class);
+                    Intent intent = new Intent(getApplicationContext(),SignIn.class);
                     startActivity(intent);
                     finish();
                 }catch (InterruptedException e){

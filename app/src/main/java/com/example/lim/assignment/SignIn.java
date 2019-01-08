@@ -85,17 +85,17 @@ public class SignIn extends AppCompatActivity {
     }
 
 
-    public void onLoginFailed() {
+   public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "SignUp failed", Toast.LENGTH_LONG).show();
 
         Loginbutton.setEnabled(true);
     }
 
-    public boolean validate() {
+   public boolean validate() {
 
-        EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+       EditText usernameEditText = (EditText) findViewById(R.id.usernameEditText);
 
-        EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+       EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
 
         boolean valid = true;
 

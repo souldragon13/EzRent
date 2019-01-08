@@ -20,7 +20,7 @@
             android:name=".Post"
             android:exported="true" />
         <activity
-            android:name=".Login"
+            android:name=".SignIn"
             android:exported="true" />
         <activity
             android:name=".Homepage"
@@ -28,11 +28,16 @@
         <activity
             android:name=".SignUp"
             android:exported="true" />
-        <activity android:name=".Find" />
-        <activity android:name=".Notification" />
-        <activity android:name=".Profile" />
-        <activity android:name=".like" />
-        <activity android:name=".Help"></activity>
+        <activity android:name=".Find"
+            android:exported="true" />
+        <activity android:name=".Notification"
+            android:exported="true" />
+        <activity android:name=".Profile"
+            android:exported="true" />
+        <activity android:name=".like"
+            android:exported="true" />
+        <activity android:name=".Feedback"
+            android:exported="true" ></activity>
     </application>
 
 </manifest>

@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Homepage extends AppCompatActivity {
-    private ImageButton Find,Post,Notification,Profile,Likes,Help;
+    private ImageButton Find,Post,Notification,Profile,Likes,Feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class Homepage extends AppCompatActivity {
         Notification = (ImageButton)findViewById(R.id.bt_notification);
         Profile = (ImageButton)findViewById(R.id.bt_profile);
         Likes = (ImageButton)findViewById(R.id.bt_like);
-        Help = (ImageButton)findViewById(R.id.bt_help);
+        Feedback = (ImageButton)findViewById(R.id.bt_feedback);
 
         Find.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,10 +51,10 @@ public class Homepage extends AppCompatActivity {
                 startActivity(new Intent(Homepage.this, like.class));
             }
         });
-        Help.setOnClickListener(new View.OnClickListener(){
+        Feedback.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(Homepage.this, Help.class));
+                startActivity(new Intent(Homepage.this, Feedback.class));
             }
         });
     }

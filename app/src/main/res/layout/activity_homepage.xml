@@ -83,14 +83,14 @@
         android:layout_marginRight="28dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt_help"
+        app:layout_constraintEnd_toStartOf="@+id/bt_feedback"
         app:layout_constraintStart_toEndOf="@+id/bt_profile"
         app:layout_constraintTop_toBottomOf="@+id/bt_post"
         app:srcCompat="@drawable/ic_likes"
         tools:srcCompat="@drawable/ic_likes" />
 
     <ImageButton
-        android:id="@+id/bt_help"
+        android:id="@+id/bt_feedback"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="8dp"
@@ -101,8 +101,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bt_like"
         app:layout_constraintTop_toBottomOf="@+id/bt_notification"
-        app:srcCompat="@drawable/ic_help"
-        tools:srcCompat="@drawable/ic_help" />
+        app:srcCompat="@drawable/ic_feedback"
+        tools:srcCompat="@drawable/ic_feedback" />
 
     <ImageButton
         android:id="@+id/bt_profile"
