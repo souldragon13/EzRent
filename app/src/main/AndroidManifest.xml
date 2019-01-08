@@ -37,6 +37,8 @@
         <activity android:name=".like"
             android:exported="true" />
         <activity android:name=".Feedback"
+            android:exported="true" />
+        <activity android:name=".Find_Details"
             android:exported="true" ></activity>
     </application>
 

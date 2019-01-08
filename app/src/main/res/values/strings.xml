@@ -12,6 +12,9 @@
     <string name="room_type_hint">Master Room</string>
     <string name="facilities">Facilities</string>
     <string name="Accessibility">Accessibility</string>
+    <string name="Feedback">Feedback</string>
+    <string name="Interested">Interested ?</string>
+
 
 
 </resources>

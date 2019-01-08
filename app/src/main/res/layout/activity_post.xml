@@ -16,7 +16,7 @@
                 android:id="@+id/imageReview"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                tools:srcCompat="@drawable/ic_image" />
+                tools:srcCompat="@android:drawable/ic_menu_gallery" />
 
             <Button
                 android:id="@+id/btnSelectImg"
@@ -97,8 +97,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textMultiLine" />
+
             <Button
-                android:id="@+id/btnSubmitComplaint"
+                android:id="@+id/btn_Submit"
                 android:layout_width="wrap_content"
                 android:layout_height="32dp"
                 android:layout_gravity="center"

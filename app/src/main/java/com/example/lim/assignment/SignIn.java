@@ -49,11 +49,11 @@ public class SignIn extends AppCompatActivity {
 
 
                         if(password.equals(user.getPassword())){
-                            Toast.makeText(getApplicationContext(), "SignIn Successfully", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Sign In Successfully", Toast.LENGTH_SHORT).show();
 
                             startActivity(new Intent(SignIn.this, Homepage.class));
                         }else{
-                            Toast.makeText(getApplicationContext(), "Pls Enter Password!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Please Enter Password!", Toast.LENGTH_SHORT).show();
                         }
                     }
 
