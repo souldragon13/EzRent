@@ -1,6 +1,5 @@
 package com.example.lim.assignment;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,17 +46,8 @@ public class SignUp extends AppCompatActivity {
                 }else{
                     adduser();
                     Login();
-//                    Boolean chkregister = db.chkregister(username);
-//                    if(chkregister==true){
-//                    Boolean insert = db.insert(username,email,password);
-//                        if(insert==true){
 //                        Toast.makeText(getApplicationContext(),"Registered Successfully",Toast.LENGTH_SHORT).show();
-//                            Login();
-//                        }
-//                }
-//                else{
 //                        Toast.makeText(getApplicationContext(),"username Already exists",Toast.LENGTH_SHORT).show();
-//                    }
                 }
             }
         });
@@ -66,14 +56,14 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the Signup activity
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), SignIn.class);
                 startActivity(intent);
 
             }
         });
     }
     public void Login(){
-        Intent intent = new Intent(this,Login.class);
+        Intent intent = new Intent(this,SignIn.class);
         startActivity(intent);
     }
     public void signup() {
@@ -87,7 +77,7 @@ public class SignUp extends AppCompatActivity {
 
     }
     public void onSignupFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "SignIn failed", Toast.LENGTH_LONG).show();
 
         Signupbutton.setEnabled(true);
     }

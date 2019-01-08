@@ -6,89 +6,111 @@
     android:layout_height="match_parent"
     tools:context=".Post">
 
-    <TextView
-        android:id="@+id/uploadpost_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Upload Post"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/price_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uploadpost_label" />
-
-    <EditText
-        android:id="@+id/price_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:ems="10"
-        android:hint="Price"
-        android:inputType="numberDecimal"
-        app:layout_constraintBaseline_toBaselineOf="@+id/price_label"
-        app:layout_constraintStart_toEndOf="@+id/price_label" />
-
-    <TextView
-        android:id="@+id/roomtype_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Room Type"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price_label" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/roomtype_label"
-        app:layout_constraintStart_toEndOf="@+id/roomtype_label">
-        `
-
-        <RadioButton
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="small room"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="101dp"/>
+            android:orientation="vertical">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medium room"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="140dp"/>
+            <ImageView
+                android:id="@+id/imageReview"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                tools:srcCompat="@drawable/ic_image" />
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Big room"
-            tools:layout_editor_absoluteX="122dp"
-            tools:layout_editor_absoluteY="179dp" />
-    </RadioGroup>
+            <Button
+                android:id="@+id/btnSelectImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Choose image"
+                tools:layout_editor_absoluteX="74dp"
+                tools:layout_editor_absoluteY="402dp" />
 
-    <TextView
-        android:id="@+id/ownername_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OwnerName:"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/price"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
 
+            <EditText
+                android:id="@+id/price_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="38dp"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/price_hint"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/location"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/location_hint"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="top"
+                android:hint="@string/location_hint"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/facilities"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/facilities_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:text="@string/Accessibility"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp" />
+
+            <EditText
+                android:id="@+id/accessibility_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textMultiLine" />
+            <Button
+                android:id="@+id/btnSubmitComplaint"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="15dp"
+                android:paddingTop="1dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="1dp"
+                android:text="Submit"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+        </LinearLayout>
 </android.support.constraint.ConstraintLayout>
