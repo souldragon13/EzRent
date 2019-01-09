@@ -16,6 +16,11 @@
     <string name="Interested">Interested ?</string>
 
     <!-- string for profile -->
+    <string name="photo">photo</string>
     <string name="profile">Profile</string>
-
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phoneNo">Phone No.</string>
+    <string name="about_me">About Me</string>
+    <string name="update">Update</string>
 </resources>
